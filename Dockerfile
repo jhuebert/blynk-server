@@ -32,4 +32,4 @@ ENTRYPOINT ["java", "-jar", "/blynk/server.jar", "-dataFolder", "/data", "-serve
 
 # Specify the Blynk server version and download the JAR file
 ENV BLYNK_SERVER_VERSION 0.28.3
-RUN curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_SERVER_VERSION}/server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
+RUN curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_SERVER_VERSION}/server-${BLYNK_SERVER_VERSION}-java8.jar > /blynk/server.jar
