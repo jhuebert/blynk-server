@@ -1,5 +1,5 @@
-FROM java:8-jre
-MAINTAINER Michael Ferguson <mpherg@gmail.com>
+FROM openjdk:8-jre-alpine
+MAINTAINER Jason Huebert <jasonhuebert@gmail.com>
 
 ENV BLYNK_SERVER_VERSION 0.26.0
 RUN mkdir /blynk
@@ -9,7 +9,10 @@ RUN curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_S
 RUN mkdir /data
 
 # Create configuration folder. To persist data, map a file to /config/server.properties
-RUN mkdir /config && touch /config/server.properties
+RUN mkdir /config && \
+    touch /config/server.properties
+    touch /config/mail.properties
+    touch /config/sms.properties
 VOLUME ["/config", "/data/backup"]
 
 # IP port listing:
@@ -24,4 +27,4 @@ VOLUME ["/config", "/data/backup"]
 EXPOSE 7443 8080 8081 8082 8441 8442 8443 9443
 
 WORKDIR /data
-ENTRYPOINT ["java", "-jar", "/blynk/server.jar", "-dataFolder", "/data", "-serverConfig", "/config/server.properties"]
+ENTRYPOINT ["java", "-jar", "/blynk/server.jar", "-dataFolder", "/data", "-serverConfig", "/config/server.properties", "-mailConfig", "/config/mail.properties", "-smsConfig", "/config/sms.properties"]
