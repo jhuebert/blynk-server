@@ -1,5 +1,7 @@
 # Blynk Server Docker Image
 
+Current Version - 0.29.2
+
 Runs your own [Blynk Server](https://github.com/blynkkk/blynk-server) in a Docker container instead of relying on Blynk's public server.
 
 [Blynk](http://www.blynk.cc) is the "first drag-n-drop IoT app builder for Arduino, Raspberry Pi, ESP8266, SparkFun boards, and others." Super fun.
