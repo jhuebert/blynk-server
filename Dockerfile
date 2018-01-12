@@ -31,5 +31,5 @@ WORKDIR /data
 ENTRYPOINT ["java", "-jar", "/blynk/server.jar", "-dataFolder", "/data", "-serverConfig", "/config/server.properties", "-mailConfig", "/config/mail.properties", "-smsConfig", "/config/sms.properties"]
 
 # Specify the Blynk server version and download the JAR file
-ENV BLYNK_SERVER_VERSION 0.29.5
+ENV BLYNK_SERVER_VERSION 0.29.6
 RUN curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_SERVER_VERSION}/server-${BLYNK_SERVER_VERSION}-java8.jar > /blynk/server.jar

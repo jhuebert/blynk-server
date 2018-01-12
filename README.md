@@ -1,6 +1,6 @@
 # Blynk Server Docker Image
 
-Current Version - [0.29.5](https://github.com/blynkkk/blynk-server/releases/tag/v0.29.5)
+Current Version - [0.29.6](https://github.com/blynkkk/blynk-server/releases/tag/v0.29.6)
 
 Runs your own [Blynk Server](https://github.com/blynkkk/blynk-server) in a Docker container instead of relying on Blynk's public server.
 The server is based on the lightweight Alpine image.
@@ -32,10 +32,12 @@ docker run \
     jhuebert/blynk-server:latest
 ```
 
+
 The administration console is where you can monitor your server. It will be accessible at this URL:
 ```
 https://your_ip:7443/admin
 ```
+
 
 ### Port Descriptions
 - `7443` - Administration UI HTTPS port
@@ -67,7 +69,7 @@ You can obtain free ssl certificates using [Let's Encrypt Certbot](https://certb
 
 Put your `fullchain.crt` and `privkey.pem` in a volume mapped folder and then reference them in the `server.properties` file.
 
-```properties
+```
 server.ssl.cert=/data/fullchain.crt
 server.ssl.key=/data/privkey_pass.pem
 server.ssl.key.pass=REPLACE_WITH_PASSWORD
@@ -77,14 +79,16 @@ https.key=/data/privkey_pass.pem
 https.key.pass=REPLACE_WITH_PASSWORD
 ```
 
+
 Don't forget to encrypt your privkey and set password:
 ```
 openssl pkcs8 -topk8 -inform PEM -outform PEM -in privkey.pem -out privkey_pass.pem
 ```
 
+
 ### mail.properties
 The `mail.properties` file contains the credentials an SMTP Email server to allow Blynk projects to send Emails.
-```properties
+```
 mail.smtp.auth=true
 mail.smtp.starttls.enable=true
 mail.smtp.host=smtp.gmail.com
@@ -93,9 +97,10 @@ mail.smtp.username=REPLACE_WITH_USERNAME@gmail.com
 mail.smtp.password=REPLACE_WITH_PASSWORD
 ```
 
+
 ### sms.properties
 The `sms.properties` file contains the credentials for the Nexmo SMS text messaging service to enable Blynk projects to send text messages.
-```properties
+```
 nexmo.api.key=REPLACE_WITH_API_KEY
 nexmo.api.secret=REPLACE_WITH_API_SECRET
 ```
