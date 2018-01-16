@@ -1,6 +1,6 @@
 # Blynk Server Docker Image
 
-Current Version - [0.29.6](https://github.com/blynkkk/blynk-server/releases/tag/v0.29.6)
+Current Version - [0.29.7](https://github.com/blynkkk/blynk-server/releases/tag/v0.29.7)
 
 Runs your own [Blynk Server](https://github.com/blynkkk/blynk-server) in a Docker container instead of relying on Blynk's public server.
 The server is based on the lightweight Alpine image.
